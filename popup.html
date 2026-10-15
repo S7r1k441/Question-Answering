@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="title">Question Answerer</span>
+    <span class="right">
+      <select id="provider" title="AI provider"></select>
+      <a href="#" id="settings" title="Settings">⚙</a>
+    </span>
+  </header>
+
+  <button id="shot" class="primary">📸 Screenshot a question</button>
+
+  <div id="drop" class="drop">
+    <textarea id="q" placeholder="Type or paste a question here…&#10;You can also paste (Ctrl+V) or drop a screenshot."></textarea>
+    <div id="imgWrap" class="imgwrap" hidden>
+      <img id="img" alt="">
+      <button id="clearImg" title="Remove image">×</button>
+    </div>
+  </div>
+  <div class="row">
+    <label class="upload">Upload image<input type="file" id="file" accept="image/*" hidden></label>
+    <button id="ask" class="primary small">Answer</button>
+  </div>
+
+  <div id="out" class="out" hidden></div>
+
+  <p class="tips">Tip: highlight text on any page and click <b>Ask AI</b>, right-click → <b>Answer this question</b>, or press <b>Alt+Shift+A</b>. <b>Alt+Shift+S</b> takes a screenshot.</p>
+
+  <script src="providers.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
